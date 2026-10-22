@@ -226,6 +226,27 @@
     letter-spacing:.15em; margin-bottom:14px; font-weight:600;
   }
 
+  /* ---------- 8b. AWARDS-ÜBERSICHT ---------- */
+  .aw{list-style:none; margin:44px 0 0; padding:0; border-top:1px solid var(--line)}
+  .aw-year{display:grid; grid-template-columns:110px 1fr; border-bottom:1px solid var(--line)}
+  .aw-year > .yr{padding:22px 0; font-size:clamp(22px,2.4vw,30px); font-weight:600; color:var(--text); letter-spacing:-.01em}
+  .aw-year ul{list-style:none; margin:0; padding:0}
+  .aw-row{display:grid; grid-template-columns:76px 1.25fr 1fr 1fr; gap:20px; align-items:center; padding:16px 0; border-top:1px solid var(--line)}
+  .aw-year ul .aw-row:first-child{border-top:0}
+  .aw-badge{height:64px; display:flex; align-items:center; justify-content:center}
+  .aw-badge img{max-height:64px; max-width:76px; width:auto; height:auto; display:block}
+  .aw-main{font-size:15px; color:var(--text)}
+  .aw-main b{display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; margin-bottom:3px}
+  .aw-cat,.aw-proj{font-size:14px; color:var(--muted)}
+  .aw-proj{color:var(--text)}
+  @media(max-width:760px){
+    .aw-year{grid-template-columns:1fr}
+    .aw-year > .yr{padding:18px 0 4px}
+    .aw-row{grid-template-columns:52px 1fr; gap:4px 16px; padding:14px 0}
+    .aw-badge{grid-row:span 3; height:52px}
+    .aw-badge img{max-height:52px; max-width:52px}
+  }
+
   /* ---------- 9. ÜBER ---------- */
   .about-grid{display:grid; gap:48px; margin-top:44px}
   @media(min-width:900px){.about-grid{grid-template-columns:1.25fr .75fr; gap:72px}}
@@ -276,6 +297,7 @@
     <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
+      <li><a href="#awards">Awards</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -297,7 +319,7 @@
 <!-- ================= AWARDS =================
      Reihenfolge nach Gewicht. Neuer Award: einen li-Block kopieren,
      Festival in small, Stufe in b eintragen. -->
-<div class="awards" id="awards">
+<div class="awards">
   <div class="wrap">
     <ul class="laurels reveal">
       <li class="laurel">
@@ -340,13 +362,6 @@
         <span><small>New York Festivals 2022</small><b>Bronze</b></span>
         <svg class="lf flip" aria-hidden="true"><use href="#laurel"/></svg>
       </li>
-    </ul>
-    <!-- Original-Badges der Festivals (Dateien in assets/awards/) -->
-    <ul class="badges reveal">
-      <li><img src="assets/awards/web-wmf-2025.png" alt="World Media Festivals 2025 Gold Award Winner" loading="lazy"></li>
-      <li><img src="assets/awards/web-nyx.png" alt="NYX Video Awards 2022 Grand, Gold and Silver Winner" loading="lazy"></li>
-      <li><img src="assets/awards/web-nyf-silver.png" alt="New York Festivals 2022 Silver Winner" loading="lazy"></li>
-      <li><img src="assets/awards/web-nyf-bronze.png" alt="New York Festivals 2022 Bronze Award" loading="lazy"></li>
     </ul>
   </div>
 </div>
@@ -646,6 +661,57 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- ================= AWARDS-ÜBERSICHT =================
+     Neuer Award: eine aw-row-Zeile ins passende Jahr kopieren.
+     Badge-Dateien liegen in assets/awards/. -->
+<section id="awards">
+  <div class="wrap">
+    <p class="eyebrow reveal">Awards</p>
+    <h2 class="reveal">Festival recognition.</h2>
+    <ol class="aw reveal">
+      <li class="aw-year"><span class="yr">2025</span>
+        <ul>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-wmf-2025-gold.png" alt="World Media Festivals 2025 Gold" loading="lazy"></span><span class="aw-main"><b>Gold</b>World Media Festivals</span><span class="aw-cat">Documentary</span><span class="aw-proj">UDO!</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-wmf-2025-gold.png" alt="World Media Festivals 2025 Gold" loading="lazy"></span><span class="aw-main"><b>Gold</b>World Media Festivals</span><span class="aw-cat">Marketing &amp; Promotion</span><span class="aw-proj">P&amp;G Ariel · Turn It Down</span></li>
+          <!-- PRÜFEN: Kategorie und Projekt zum WMF 2025 Silver eintragen, Badge fehlt -->
+          <li class="aw-row"><span class="aw-badge"></span><span class="aw-main"><b>Silver</b>World Media Festivals</span><span class="aw-cat"></span><span class="aw-proj"></span></li>
+        </ul>
+      </li>
+      <li class="aw-year"><span class="yr">2024</span>
+        <ul>
+          <!-- PRÜFEN: Badge fehlt -->
+          <li class="aw-row"><span class="aw-badge"></span><span class="aw-main"><b>Silver</b>US International Awards</span><span class="aw-cat">Social Media Campaign</span><span class="aw-proj">HELLA · We Got That 2.0</span></li>
+        </ul>
+      </li>
+      <li class="aw-year"><span class="yr">2023</span>
+        <ul>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyx-2023-gold.png" alt="NYX Awards 2023 Gold" loading="lazy"></span><span class="aw-main"><b>Gold</b>NYX Awards</span><span class="aw-cat">Commercial &amp; Marketing: Construction</span><span class="aw-proj">Caparol · Paint Buddy</span></li>
+          <!-- PRÜFEN: Kategorie und Projekt zum WMF 2023 Silver eintragen -->
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-wmf-2023-silver.png" alt="World Media Festivals 2023 Silver" loading="lazy"></span><span class="aw-main"><b>Silver</b>World Media Festivals</span><span class="aw-cat"></span><span class="aw-proj"></span></li>
+        </ul>
+      </li>
+      <li class="aw-year"><span class="yr">2022</span>
+        <ul>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyx-2022-grand.png" alt="NYX Video Awards 2022 Grand Award + 2× Gold" loading="lazy"></span><span class="aw-main"><b>Grand Award + 2× Gold</b>NYX Video Awards</span><span class="aw-cat">Commercial &amp; Marketing</span><span class="aw-proj">Cloud of Legacy · Peace of Mind</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-wmf-2022-grand.png" alt="World Media Festivals 2022 Grand Award" loading="lazy"></span><span class="aw-main"><b>Grand Award</b>World Media Festivals</span><span class="aw-cat">Advertising</span><span class="aw-proj">Cloud of Legacy · Peace of Mind</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-cannes-2022.png" alt="Cannes Corporate Media &amp; TV Awards 2022 Finalist" loading="lazy"></span><span class="aw-main"><b>Finalist</b>Cannes Corporate Media &amp; TV Awards</span><span class="aw-cat"></span><span class="aw-proj">Cloud of Legacy · Peace of Mind</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyf-2022-bronze.png" alt="New York Festivals Advertising Awards 2022 Bronze" loading="lazy"></span><span class="aw-main"><b>Bronze</b>New York Festivals Advertising Awards</span><span class="aw-cat">Film Craft</span><span class="aw-proj">Cloud of Legacy · Peace of Mind</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyf-2022-silver.png" alt="New York Festivals 2022 Silver" loading="lazy"></span><span class="aw-main"><b>Silver</b>New York Festivals</span><span class="aw-cat">Corporate Image</span><span class="aw-proj">Light Runs Through Our Veins</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyx-2022-gold.png" alt="NYX Video Awards 2022 2× Gold" loading="lazy"></span><span class="aw-main"><b>2× Gold</b>NYX Video Awards</span><span class="aw-cat">Branded Content</span><span class="aw-proj">Caparol · The Real Innovators</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyx-2022-gold.png" alt="NYX Video Awards 2022 Gold" loading="lazy"></span><span class="aw-main"><b>Gold</b>NYX Video Awards</span><span class="aw-cat">PR Video / Film / Web</span><span class="aw-proj">Munich International School</span></li>
+          <li class="aw-row"><span class="aw-badge"><img src="assets/awards/b-nyx-2022-silver.png" alt="NYX Video Awards 2022 2× Silver" loading="lazy"></span><span class="aw-main"><b>2× Silver</b>NYX Video Awards</span><span class="aw-cat">Commercial &amp; Marketing</span><span class="aw-proj">Light Runs Through Our Veins</span></li>
+        </ul>
+      </li>
+      <li class="aw-year"><span class="yr">2019</span>
+        <ul>
+          <!-- PRÜFEN: Badge fehlt -->
+          <li class="aw-row"><span class="aw-badge"></span><span class="aw-main"><b>Gold OttoCar</b>Autovision Awards</span><span class="aw-cat">Imagefilm</span><span class="aw-proj">Light and Beyond</span></li>
+        </ul>
+      </li>
+    </ol>
   </div>
 </section>
 
