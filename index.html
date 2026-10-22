@@ -148,6 +148,10 @@
     font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
   }
   .awards b{color:var(--text); font-weight:600}
+  .awards .badges{list-style:none; margin:34px 0 0; padding:0; display:flex; flex-wrap:wrap;
+    justify-content:center; align-items:center; gap:22px 44px}
+  .awards .badges img{height:64px; width:auto; display:block}
+  @media(max-width:760px){ .awards .badges{gap:16px 26px} .awards .badges img{height:46px} }
 
   /* ---------- 5. PORTFOLIO-GRID ---------- */
   .grid{
@@ -285,7 +289,7 @@
 <section class="intro" id="top">
   <div class="wrap">
     <h1>Patrick Hoffmann</h1>
-    <p class="role">Writer, Director &amp; Creative Producer · Dubai</p>
+    <p class="role">Writer, Director &amp; Creative Producer · Dubai &amp; Munich</p>
     <p class="tagline">Ten years of making films. Still in it for the love of the game.</p>
   </div>
 </section>
@@ -293,7 +297,7 @@
 <!-- ================= AWARDS =================
      Reihenfolge nach Gewicht. Neuer Award: einen li-Block kopieren,
      Festival in small, Stufe in b eintragen. -->
-<div class="awards">
+<div class="awards" id="awards">
   <div class="wrap">
     <ul class="laurels reveal">
       <li class="laurel">
@@ -336,6 +340,13 @@
         <span><small>New York Festivals 2022</small><b>Bronze</b></span>
         <svg class="lf flip" aria-hidden="true"><use href="#laurel"/></svg>
       </li>
+    </ul>
+    <!-- Original-Badges der Festivals (Dateien in assets/awards/) -->
+    <ul class="badges reveal">
+      <li><img src="assets/awards/web-wmf.png" alt="World Media Festivals 2022 Grand Award Winner" loading="lazy"></li>
+      <li><img src="assets/awards/web-nyx.png" alt="NYX Video Awards 2022 Grand, Gold and Silver Winner" loading="lazy"></li>
+      <li><img src="assets/awards/web-nyf-silver.png" alt="New York Festivals 2022 Silver Winner" loading="lazy"></li>
+      <li><img src="assets/awards/web-nyf-bronze.png" alt="New York Festivals 2022 Bronze Award" loading="lazy"></li>
     </ul>
   </div>
 </div>
@@ -681,15 +692,14 @@
       <a href="mailto:patrick.hoffmann@tcbcreation.com">patrick.hoffmann@tcbcreation.com</a>
       <a href="tel:+971588129685">+971 58 812 9685</a>
       <a href="tel:+4915775372564">+49 157 75372564</a>
-      <!-- PRÜFEN: LinkedIn-Adresse -->
-      <a href="https://www.linkedin.com/in/patrick-m-hoffmann" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/patrick-hoffmann-78abbb131/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;width:100%">
-    <span>© <span id="yr"></span> Patrick Hoffmann · Dubai</span>
+    <span>© <span id="yr"></span> Patrick Hoffmann · Dubai, UAE · Munich, Germany</span>
     <span>Creative Producer &amp; Director</span>
   </div>
 </footer>
